@@ -10,8 +10,10 @@
   const p = new MyPromise((resolve, reject) => {
     resolve('解决')
   })
+  p.then((res) => {
+    console.log(res)
+  })
 
-  console.log(p)
 </script>
 </body>
 </html>
