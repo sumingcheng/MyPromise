@@ -6,5 +6,12 @@
 </head>
 <body>
 <script src="./MyPromise.js"></script>
+<script>
+  const p = new MyPromise((resolve, reject) => {
+    resolve('解决')
+  })
+
+  console.log(p)
+</script>
 </body>
 </html>
