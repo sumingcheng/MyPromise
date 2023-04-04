@@ -10,7 +10,12 @@ class MyPromise {
     this.value = null
     // ES6 class中，默认是严格模式，所以要绑定this
     // executor是一个函数，这个函数执行的时候，分别使用resolve和reject这两个方法来处理成功和失败的情况
-    executor(this.resolve.bind(this), this.reject.bind(this))
+    try {
+      // 出现异常，直接执行reject
+      executor(this.resolve.bind(this), this.reject.bind(this))
+    }catch (e) {
+      this.reject(e)
+    }
   }
   
   resolve (value) {
